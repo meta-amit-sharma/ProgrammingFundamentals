@@ -28,34 +28,34 @@ public class Permutation {
 	}
 	/**
   	* permutation function
-  	* @param str string to calculate permutation for
-  	* @param l starting index
-  	* @param r end index
+  	* @param input string to calculate permutation for
+  	* @param lowerIndex starting index
+  	* @param upperIndex end index
   	*/
-	void permute(String str, int l, int r, List<String> result) {
-		if (l == r) {
-			result.add(str); 
+	void permute(String input, int lowerIndex, int upperIndex, List<String> result) {
+		if (lowerIndex == upperIndex) {
+			result.add(input); 
 		} else {
-			for (int i = l; i <= r; i++) {
-				str = swap(str, l, i);
-				permute(str, l + 1, r, result);
-				str = swap(str, l, i);
+			for (int index = lowerIndex; index <= upperIndex; index++) {
+				input = swap(input, lowerIndex, index);
+				permute(input, lowerIndex + 1, upperIndex, result);
+				input = swap(input, lowerIndex, index);
 			}
 		}
 	}
 	/**
   	* Swap Characters at position
-  	* @param a string value
-  	* @param i position 1
-  	* @param j position 2
+  	* @param input string value
+  	* @param position1 
+  	* @param position2 
   	* @return swapped string
   	*/
-	public String swap(String a, int i, int j) {
+	public String swap(String input, int position1, int position2) {
 		char temp;
-		char[] charArray = a.toCharArray();
-		temp = charArray[i] ;
-		charArray[i] = charArray[j];
-		charArray[j] = temp;
+		char[] charArray = input.toCharArray();
+		temp = charArray[position1] ;
+		charArray[position1] = charArray[position2];
+		charArray[position2] = temp;
 		return String.valueOf(charArray);
     	}
 }
