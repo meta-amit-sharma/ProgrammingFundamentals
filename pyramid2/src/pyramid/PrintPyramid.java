@@ -8,7 +8,7 @@
  * one method returns the string containing numbers
  * last method returns the string containing final pyramid
  * @author Amit Kumar Sharma
- *
+ * @version 1.0
  */
 
 public class PrintPyramid {
@@ -25,7 +25,6 @@ public class PrintPyramid {
 		}
 		return s;
 	}
-	
 	/**
 	 * This function returns String of numbers
 	 * @param row
@@ -39,7 +38,6 @@ public class PrintPyramid {
 		}
 		return s;
 	}
-	
 	/**
 	 * This function returns String of final pyramid
 	 * @param n
@@ -47,13 +45,11 @@ public class PrintPyramid {
 	 */
 	String[] print (int n) {
 		String s[] = new String[n];
-		
 		for (int i = 0; i < n; i++) {
 			s[i] = ( spaces(i, n) + numbers(i, n) );	//concatenates space and number string 
 			System.out.println(s[i]);
 		}
 		return s;
-		
 	}
 	
 }
