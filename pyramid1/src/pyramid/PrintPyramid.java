@@ -18,11 +18,11 @@ public class PrintPyramid {
 	 * @return
 	 */
 	String spaces (int row, int n)  {
-		String s = "";
-		for (int i = 0; i < n - row; i++) {
-			s += " ";
+		String spaceString = "";
+		for (int spaceCounter = 0; spaceCounter < n - row; spaceCounter++) {
+			spaceString += " ";
 		}
-		return s;
+		return spaceString;
 	}
 	/**
 	 * This function returns String of numbers
@@ -31,17 +31,17 @@ public class PrintPyramid {
 	 * @return
 	 */
 	String numbers (int row, int n) {
-		String s = "";
-		int i;								//counter for loops
+		String numberString = "";
+		int upCounter;								//counter for loops
 		/*This loop is for the numbers in increasing order*/
-		for (i = 1; i <= row; i++) {
-			s += i;
+		for (upCounter = 1; upCounter <= row; upCounter++) {
+			numberString += upCounter;
 		}
 		/*This loop is for the numbers in decreasing order*/
-		for (int j = i - 2; j >= 1; j--) {
-			s += j;
+		for (int downCounter = upCounter - 2; downCounter >= 1; downCounter--) {
+			numberString += downCounter;
 		}
-		return s;
+		return numberString;
 	}
 	/**
 	 * This function returns String of final pyramid
@@ -49,17 +49,17 @@ public class PrintPyramid {
 	 * @return
 	 */
 	String[] print (int n) {
-		String s[] = new String[ 2 * n - 1];
+		String pyramid[] = new String[ 2 * n - 1];
 		/*This loop prints the upper half of the pattern*/
-		for (int i = 1; i <= n; i++) {
-			s[i - 1] = ( spaces(i, n) + numbers(i, n) ); 		//concatenates space and number string 
-			System.out.println(s[i - 1]);
+		for (int index = 1; index <= n; index++) {
+			pyramid[index - 1] = ( spaces(index, n) + numbers(index, n) ); 		//concatenates space and number string 
+			System.out.println(pyramid[index - 1]);
 		}
 		/*This loop prints the lower half of the pattern*/
-		for (int i = 4; i >= 1; i--) {
-			s[(2 * n - 1) - i] = ( spaces(i, n) + numbers(i, n) );	//concatenates space and number string 
-			System.out.println(s[(2 * n - 1) - i]);
+		for (int index = 4; index >= 1; index--) {
+			pyramid[(2 * n - 1) - index] = ( spaces(index, n) + numbers(index, n) );	//concatenates space and number string 
+			System.out.println(pyramid[(2 * n - 1) - index]);
 		}
-		return s;
+		return pyramid;
 	}
 }
