@@ -25,17 +25,13 @@ public class TowerOfHanoi {
 		if( disk == 1) {
 			result.add("Move Disk " + disk + " from " + source + " to " + destination);
 		} else {
-			
 			/*Moving n-1 disks from Source to Auxiliary*/
 			result.addAll(towerOfHanoi(source, temp, destination, disk - 1)); 
-			
 			/*Moving nth disks from Source to Destination*/
 			result.add("Move Disk " + disk + " from " + source + " to " + destination);
-			
 			/*Moving n-1 disks from Auxiliary to Destination*/
 			result.addAll( towerOfHanoi(temp, destination, source, disk - 1) );
 		}
 		return result;
 	}
-
 }
