@@ -36,26 +36,26 @@ public class QuickSortArray {
 	 * @return returns the position of pivot element
 	 */
 	public int partition ( int arr[], int low, int high ) {
-		int i = low - 1;
+		int largeElementIndex = low - 1;
 		/*taking pivot to be the last element of array */
 		int pivot = arr[ high ];
 		/* Swapping is performed here to bring all the elements which are less than
 		 * the pivot element to the left side, while all the elements greater than 
 		 * the pivot elements to the right side
 		 */
-		for ( int j = low; j < high; j++) {
-			if ( arr[ j ] < pivot ) {
-				i++;
-				int temp = arr[ j ];
-				arr[ j ] = arr[ i ];
-				arr[ i ] = temp;
+		for ( int smallElementIndex = low; smallElementIndex < high; smallElementIndex++) {
+			if ( arr[ smallElementIndex ] < pivot ) {
+				largeElementIndex++;
+				int temp = arr[ smallElementIndex ];
+				arr[ smallElementIndex ] = arr[ largeElementIndex ];
+				arr[ largeElementIndex ] = temp;
 			}
 		}
 		/* here the pivot element is brought in its right location*/
-		int temp = arr[ i + 1 ];
-		arr[ i + 1 ] = arr[ high ];
+		int temp = arr[ largeElementIndex + 1 ];
+		arr[ largeElementIndex + 1 ] = arr[ high ];
 		arr[ high ] = temp;
-		return ( i + 1 ); 			//position of the pivot element
+		return ( largeElementIndex + 1 ); 			//position of the pivot element
 	}
 
 }
