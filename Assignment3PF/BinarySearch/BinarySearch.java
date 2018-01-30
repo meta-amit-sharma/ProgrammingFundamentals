@@ -2,7 +2,6 @@
  * This file contains the class named BinarySearch
  */
 package Session3.BinarySearch;
-
 /**
  * This class contains the recursive function
  * to find if the given number is present in the array
@@ -10,7 +9,6 @@ package Session3.BinarySearch;
  *
  */
 public class BinarySearch {
-
 	/**
 	 * This function takes the search term and the array as input
 	 * and search using Binary search. It returns true if the number exists 
@@ -23,7 +21,6 @@ public class BinarySearch {
 	 */
 	public boolean binarySearch (int upper, int lower, int inputArray[], int n ) {
 		int middle = ( upper + lower ) / 2 ;
-		
 		/*Perform operation only when lower is less than upper*/
 		if ( lower < upper ) {	
 			/*The search term is equal to the middle term of array*/
@@ -40,7 +37,5 @@ public class BinarySearch {
 			}
 		} 
 		return false; //If the search term is not present in the array
-		
-		
 	}
 }
