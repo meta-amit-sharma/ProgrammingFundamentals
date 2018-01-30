@@ -19,11 +19,11 @@ public class PrintPyramid {
 	 * @return
 	 */
 	String spaces (int row, int n) {
-		String s = "";
-		for (int i = 0; i < row; i++) {
-			s += " ";
+		String spaceString = "";
+		for (int spaceCounter = 0; spaceCounter < row; spaceCounter++) {
+			spaceString += " ";
 		}
-		return s;
+		return spaceString;
 	}
 	/**
 	 * This function returns String of numbers
@@ -32,11 +32,11 @@ public class PrintPyramid {
 	 * @return
 	 */
 	String numbers (int row, int n) {
-		String s = "";
-		for (int i = 1; i < (n - row) + 1; i++ ) {
-			s += i;
+		String numberString = "";
+		for (int numberCounter = 1; numberCounter < (n - row) + 1; numberCounter++ ) {
+			numberString += numberCounter;
 		}
-		return s;
+		return numberString;
 	}
 	/**
 	 * This function returns String of final pyramid
@@ -44,12 +44,12 @@ public class PrintPyramid {
 	 * @return
 	 */
 	String[] print (int n) {
-		String s[] = new String[n];
-		for (int i = 0; i < n; i++) {
-			s[i] = ( spaces(i, n) + numbers(i, n) );	//concatenates space and number string 
-			System.out.println(s[i]);
+		String pyramid[] = new String[n];
+		for (int index = 0; index < n; index++) {
+			pyramid[index] = ( spaces(index, n) + numbers(index, n) );	//concatenates space and number string 
+			System.out.println(pyramid[index]);
 		}
-		return s;
+		return pyramid;
 	}
 	
 }
