@@ -13,20 +13,20 @@ public class LinearSearch {
 	 * This function takes the search term and the array as input
 	 * and search using Linear search. It returns true if the number exists 
 	 * in the array or else false
-	 * @param n is the search term
+	 * @param searchElement is the search term
 	 * @param inputArray array containing the terms
-	 * @param a counter variable
-	 * @return final results
+	 * @param counter counter variable
+	 * @return true if element found
 	 */
-	public boolean linearSearch (int n, int inputArray[], int a ) {
+	public boolean linearSearch (int searchElement, int inputArray[], int counter ) {
 		/*To check if we reach till the end of the Array*/
-		if( a >= inputArray.length ) {
+		if( counter >= inputArray.length ) {
 			return false;
 		} 
 		/*If we find that the given number is present in the Array*/
-		if ( inputArray[ a ] == n ) {
+		if ( inputArray[ counter ] == searchElement ) {
 			return true;
 		}
-		return linearSearch ( n, inputArray, a + 1 );
+		return linearSearch ( searchElement, inputArray, counter + 1 );
 	}
 }
