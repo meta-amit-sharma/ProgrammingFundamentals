@@ -19,29 +19,27 @@ public class CheckArray {
 	  * The array for example {1,1,1,1} is assumed to be unordered,
 	  * since we can't place it in either of the two sections.
 	  */
-	 public int testArray(int input[]){
+	  public int testArray(int input[]){
 		   int i;
 		   
 		   /*It skips all the equal numbers at the beginning of array for example {1,1,1,2,3} is increasing*/
-		   for (i = 0; (input[i] == input[i+1]) && i< input.length-1; i++);		
+		   for(i=0;(input[i]==input[i+1])&&i<input.length-2;i++);		
 		   
-	       if ( input[i] > input[i+1] ){						//this block checks if the array is descending
-	           for ( int k=i; k<input.length-1; k++){
-	               if ( input[k] < input[k+1]) {				//checks if any element defies the order
-	                return 0;	
-	               }
+	       if( input[i] > input[i+1] ){					//this block checks if the array is descending
+	           for( int k=i; k<input.length-1; k++){
+	               if( input[k] < input[k+1])				//checks if any element defies the order
+	                return 0;								
 	           }
 	            return 2;
 	        }
-	        if ( input[i] < input[i+1] ){					//this block checks if the array is ascending
-	           for ( int k=i; k<input.length-1; k++){
-	               if ( input[k] > input[k+1]) {				//checks if any element defies the order
+	        if( input[i] < input[i+1] ){					//this block checks if the array is ascending
+	           for( int k=i; k<input.length-1; k++){
+	               if( input[k] > input[k+1])				//checks if any element defies the order
 	                return 0;
-	               }
 	            }
 	            return 1;
 	        }
-	       return 0;										//function returns 0 if the array is unordered
+	       return 1;							//function returns 1 if the array contains same elements
 	    }
 
 }
