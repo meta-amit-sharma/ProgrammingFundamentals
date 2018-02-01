@@ -50,6 +50,9 @@ public class PrintPyramid {
 	 */
 	String[] print (int n) {
 		String pyramid[] = new String[ 2 * n - 1];
+		if ( n > 0 && n < 10 ) {
+			System.out.println(" Please give value of n between 1-9 ");
+		}
 		/*This loop prints the upper half of the pattern*/
 		for (int index = 1; index <= n; index++) {
 			pyramid[index - 1] = ( spaces(index, n) + numbers(index, n) ); 		//concatenates space and number string 
