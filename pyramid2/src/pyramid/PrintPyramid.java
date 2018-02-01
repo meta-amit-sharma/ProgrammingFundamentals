@@ -45,6 +45,10 @@ public class PrintPyramid {
 	 */
 	String[] print (int n) {
 		String pyramid[] = new String[n];
+		if ( n > 0 && n < 10 ) {
+			System.out.println(" Please give value of n between 1-9 ");
+			return pyramid;
+		}
 		for (int index = 0; index < n; index++) {
 			pyramid[index] = ( spaces(index, n) + numbers(index, n) );	//concatenates space and number string 
 			System.out.println(pyramid[index]);
