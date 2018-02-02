@@ -22,7 +22,7 @@ public class BinarySearch {
 	public boolean binarySearch (int upper, int lower, int inputArray[], int searchElement ) {
 		int middle = ( upper + lower ) / 2 ;
 		/*Perform operation only when lower is less than upper*/
-		if ( lower < upper ) {	
+		if ( lower <= upper ) {	
 			/*The search term is equal to the middle term of array*/
 			if ( inputArray[ middle ] == searchElement ) {
 				return true;
