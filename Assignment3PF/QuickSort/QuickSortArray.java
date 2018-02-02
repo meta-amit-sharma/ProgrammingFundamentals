@@ -43,19 +43,31 @@ public class QuickSortArray {
 		 * the pivot element to the left side, while all the elements greater than 
 		 * the pivot elements to the right side
 		 */
-		for ( int smallElementIndex = low; smallElementIndex < high; smallElementIndex++) {
-			if ( arr[ smallElementIndex ] < pivot ) {
-				largeElementIndex++;
-				int temp = arr[ smallElementIndex ];
-				arr[ smallElementIndex ] = arr[ largeElementIndex ];
-				arr[ largeElementIndex ] = temp;
+		for ( int j = low; j < high; j++) {
+			if ( (arr[ j ] < pivot) ) {
+				i++;
+				if ( i != j ) {
+					arr = swap (arr, j, i);
+				}
 			}
 		}
 		/* here the pivot element is brought in its right location*/
-		int temp = arr[ largeElementIndex + 1 ];
-		arr[ largeElementIndex + 1 ] = arr[ high ];
-		arr[ high ] = temp;
-		return ( largeElementIndex + 1 ); 			//position of the pivot element
+		arr = swap (arr, high, (i + 1) );
+		return ( i + 1 ); //position of the pivot element
+	}
+	
+	/**
+	 * A function to swap values within array
+	 * @param arr - input array
+	 * @param position1
+	 * @param position2
+	 * @return
+	 */
+	public int[] swap (int[] arr, int position1, int position2) {
+		int temp = arr[ position1 ];
+		arr[ position1 ] = arr[ position2 ];
+		arr[ position2 ] = temp;
+		return arr;
 	}
 
 }
