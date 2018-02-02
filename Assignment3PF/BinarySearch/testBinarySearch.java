@@ -11,10 +11,7 @@ public class testBinarySearch {
 	public void test() {
 		boolean expected = true;
 		int inputArray[] = new int[] {1,2,3,4,5,6,7,8,9,10};
-		int lower = 0;
-		int upper = 9;
-		int n = 3;
-		boolean actual =bs.binarySearch(upper, lower, inputArray, n);
+		boolean actual =bs.binarySearch(inputArray.length - 1, 0, inputArray, 3);
 		assertEquals ( expected, actual );
 	}
 
