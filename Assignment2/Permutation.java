@@ -22,8 +22,7 @@ public class Permutation {
 	 */
 	List<String> generatePermutation ( String input ) {
 		List<String> result = new ArrayList<String>();
-		int size = input.length();
-		permute(input, 0, size-1, result );
+		permute(input, 0, input.length() - 1, result );
 		return result;
 	}
 	/**
